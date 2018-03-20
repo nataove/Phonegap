@@ -97,7 +97,6 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="https://www.datos.gov.co/resource/wcz7-chab.json" />
-    <allow-intent href="https://maps.googleapis.com/maps/api/js?key&callback=initMap" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
