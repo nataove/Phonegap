@@ -38,6 +38,7 @@
         <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
     </feature>
     <name>Taller Phonegap</name>
+    <icon src="www/img/icono.png" />
     <description>
         Hello World sample application that responds to the deviceready event.
     </description>
@@ -46,6 +47,7 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <access origin="https://www.datos.gov.co/resource/wcz7-chab.json" />
     <access origin="*.google.com" />
     <access origin="*.googleapis.com" />
     <access origin="*.gstatic.com" />
