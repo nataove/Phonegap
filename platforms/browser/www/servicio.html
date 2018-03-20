@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
+   
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Taller Phonegap</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="title navbar-brand" href="index.html">Taller Phonegap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
+            aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contactos.html">Contactos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="conexion.html">Ver conexión</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="servicio.html">Servicio<span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="geolocalizacion.html">Geolocalización</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <br>
+
+    <div class="jumbotron">
+        <div class="container text-center">
+            <h1> Servicio</h1>
+            <br>
+            <h5><b>Sitios Turísticos de Tuluá</b></h5>
+            <div class="container text-center" role="alert">
+               <div class="scroll">
+                   <table class="table table-hover" id="tablita">
+                      <tr>
+                          <td><b>Nombre</b></td>
+                          <td><b>Latitud</b></td>
+                          <td><b>Longitud</b></td>
+                      </tr>
+                  </table>
+              </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+
+       $.ajax({
+            type: "GET",
+            url: "https://www.datos.gov.co/resource/wcz7-chab.json",
+            crossDomain: true,
+            cache: false,
+            success: function(result){
+                 var table = document.getElementById("tablita");
+                for (var i = 1; i < result.length+1; i++) {
+                    var row = table.insertRow(i);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    cell1.innerHTML = result[i-1].nombre;;
+                    cell2.innerHTML = result[i-1].latitud;
+                    cell3.innerHTML = result[i-1].longitud;
+                }
+                
+                $("#tablita tr td").click(clickTabla);
+                
+                 function clickTabla(){
+                    var r = $(this).parent("tr");
+                    var x = $(this).parent("tr").index();
+                    CrearEnlace(result[x-1].informacion);
+                    //r.css("background-color",'#E6E6E6');
+                }
+                function CrearEnlace(url) {
+                    window.open(url, '_system');
+                }
+             },   
+
+  
+            error: function(result){
+                alert("error");
+            }
+
+       });
+
+
+   
+
+
+
+
+
+    </script>
+
+	<script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>

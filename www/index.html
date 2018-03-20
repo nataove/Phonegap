@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Taller Phonegap</title>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="title navbar-brand" href="index.html">Taller Phonegap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03"
+            aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contactos.html">Contactos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="conexion.html">Ver conexión</a>
+                </li>                
+
+                <li class="nav-item">
+                    <a class="nav-link" href="servicio.html">Servicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="geolocalizacion.html">Geolocalización</a>
+                </li>
+            </ul>            
+        </div>
+    </nav>
+
+    <br>
+
+    <div class="container text-center">
+        <h1><a href='index.html'>Bienvenido</a></h1>
+
+            <div class="jumbotron" >                
+                <h3><a href='contactos.html'>Contactos</a></h3>
+                <p>Nuesta aplicación permite acceder de forma fácil a su lista de contactos además de poder hacer uso de un filtro para facilitar la búsqueda.</p>                     		
+            </div>
+
+            <div class="jumbotron">                
+                <h3><a href='conexion.html'>Conexión</a></h3>
+                <p>Con esta aplicación podrá verificar de forma fácil e instantánea a qué tipo de red esta conectado.</p>                          
+            </div>
+
+            <div class="jumbotron">                
+                <h3><a href='servicio.html'>Servicio</a></h3>
+                <p>Nuestra aplicación consume un servicio público para brindarle un listado de los sitios turísticos de la ciudad de Tuluá, con solo un clic será dirigido a la página oficial del sitio que usted desee.</p>                          
+            </div>
+
+            <div class="jumbotron">                
+                <h3><a href='geolocalizacion.html'>Geolocalización</a></h3>
+                <p>Por medio de la API de Google Maps podrá ver su ubicación actual y navegar en el mapa del lugar en dónde usted se encuentre.</p>                          
+            </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="phonegap.js"></script>
+
+
+	<script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>
